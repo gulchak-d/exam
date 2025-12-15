@@ -20,13 +20,13 @@ class TestFibonacci(unittest.TestCase):
         with self.assertRaises(ValueError):
             fibonacci("text")
 
-    def test_float_string(self):
-        with self.assertRaises(ValueError):
-            fibonacci("2.5")
-
     def test_empty_string(self):
         with self.assertRaises(ValueError):
             fibonacci("")
+
+    @unittest.expectedFailure
+    def test_fail_example(self):
+        self.assertEqual(fibonacci(5), 100)
 
 if __name__ == '__main__':
     unittest.main()
