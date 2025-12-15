@@ -16,9 +16,17 @@ class TestFibonacci(unittest.TestCase):
         with self.assertRaises(ValueError):
             fibonacci(-5)
 
-    def test_invalid_type(self):
+    def test_invalid_type_text(self):
         with self.assertRaises(ValueError):
             fibonacci("text")
+
+    def test_float_string(self):
+        with self.assertRaises(ValueError):
+            fibonacci("2.5")
+
+    def test_empty_string(self):
+        with self.assertRaises(ValueError):
+            fibonacci("")
 
 if __name__ == '__main__':
     unittest.main()
